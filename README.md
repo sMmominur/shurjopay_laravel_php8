@@ -6,7 +6,7 @@ To integrate the <b>shurjoPay payment gateway</b> in your <b>Laravel project</b>
 Append the following line in providers array. <br>
     >smasif\ShurjopayLaravelPackage\ShurjopayServiceProvider::class,
 	
- 3) Now in order to publish ShurjopayServiceProvider class and run the following command<br>
+3) Now in order to publish ShurjopayServiceProvider class and run the following command<br>
      >php artisan vendor:publish –provider = "smasif\ShurjopayLaravelPackage\ShurjopayServiceProvider"
  
    It will automatically create a **'shurjopay.php'** file in your project **config** folder
@@ -17,12 +17,6 @@ Modify **shurjopay.php** file or add the following Keys in **.env** file with th
   >MERCHANT_USERNAME = <br>
   >MERCHANT_PASSWORD = <br>
   >MERCHANT_KEY_PREFIX = <br>
-
-
-
-
-
-
 
 
 
@@ -60,16 +54,16 @@ a)	Add the following line of code in the **ShurjopayController.php**. <br>
 >use DB;<br>
 
 b) Write the necessary query you want to add response in your database. It may be update database or insert into database.<br>
-    **if ($res['status']){<br>
-    echo "Success";<br>
-    die();<br>
-    }** <br>
+        **if ($res['status']){<br>
+        echo "Success";<br>
+        die();<br>
+        }** <br>
 
 c) Write the necessary query you want to add after failing transaction. It may be update database or insert into database.<br>
-    **if ($res['status']){<br>
-        echo "Fail";<br>
-        die();<br>
-    }**
+        **if ($res['status']){<br>
+            echo "Fail";<br>
+            die();<br>
+        }**
 
 
 **Now Test your application and oversees the response and interaction**
