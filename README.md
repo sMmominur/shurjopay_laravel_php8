@@ -1,4 +1,4 @@
-To integrate the <b>shurjoPay payment gateway</b> in your <b>Laravel project</b> do the following tasks sequentially.
+To integrate the <b>shurjoPay Payment Gateway</b> in your <b>Laravel project</b> do the following tasks sequentially.
 # Installation and Configuration
 1) Go to your project directory and use composer to install this package. Run the following command.
 	>composer require smasif/shurjopay-laravel-package
@@ -29,19 +29,19 @@ Modify **shurjopay.php** file or add the following Keys in **.env** file with th
 6) Now add this line of code in your method where you want to call shurjoPay Payment Gateway. You can use any code segment of below <br>
     >$shurjopay_service = new ShurjopayService();<br>
     >$tx_id = $shurjopay_service->generateTxId();<br>
-    >$shurjopay_service->sendPayment(2); <br>
+    >$shurjopay_service->sendPayment(2); //You will pass the amount variable in place of 2<br>
     
                             **OR**
                             
     >$shurjopay_service = new ShurjopayService();<br>
-    >$shurjopay_service->generateTxId('123456');<br>
-    >$success_route = route('Your route'); <br>
+    >$tx_id = $shurjopay_service->generateTxId();<br>
+    >$success_route = route('Your route'); //This is your custom route where you want to back after completing the transaction.<br>
     >$shurjopay_service->sendPayment(2, $success_route); <br>
 
 <br>
 
 
-**Note:**
+**Note: (Optional)**
 In the <i>sendPayment</i> method you can add as much parameter as you want but if you want to add more parameters in <i>sendPayment</i> method you need to add this parameters in <i>sendPayment</i> method of **ShurjopayService.php** file which is located in <br>
         vendor/smasif/ shurjopay-laravel-package/src 
 <br>
